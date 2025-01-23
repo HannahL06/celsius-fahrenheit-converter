@@ -1,0 +1,53 @@
+def c_to_f_converter():
+    c_min = int(input("Please enter a minimum Celsius temperature: "))
+    c_max = int(input("Please enter a maximum Celsius temperature: "))
+    intvl = int(input("Please enter an interval: "))
+    if c_min > c_max:
+        print("The maximum tempature must be greater than the minimum. Try again.")
+        c_to_f_converter()
+    elif intvl <= 0:
+        print("The interval must be greater than 0. Try again.")
+        c_to_f_converter()
+    elif intvl >= c_max:
+        print("The interval must be less than the maximum tempature. Try again.")
+        c_to_f_converter()
+    else:
+        print("Celsius              Fahrenheit")
+        for x in range(c_min, c_max + 1, intvl):
+            fahren = (9 / 5) * x + 32.0
+            print(f"{x}                    {fahren: .1f}")
+
+def f_to_c_converter():
+    f_min = int(input("Please enter a minimum Fahrenheit temperature: "))
+    f_max = int(input("Please enter a maximum Fahrenheit temperature: "))
+    intvl = int(input("Please enter an interval: "))
+    if f_min > f_max:
+        print("The maximum tempature must be greater than the minimum tempature. Try again.")
+        f_to_c_converter()
+    elif intvl <= 0:
+        print("The interval must be greater than 0. Try again.")
+        f_to_c_converter()
+    elif intvl >= f_max:
+        print("The interval must be less than the maximum tempature. Try again.")
+        f_to_c_converter()
+    else:
+        print("Fahrenheit            Celsius")
+        for x in range(f_min, f_max + 1, intvl):
+            celcius = (x - 32) * (5 / 9)
+            print(f"{x}                    {celcius: .1f}")
+ 
+try:
+    c_to_f_converter()
+except:
+    print("Try again. Only enter integers.")
+    c_to_f_converter()
+
+yes = input("If you would like to convert from Fahrenheit to Celsius, enter 'y'. ")
+if yes == 'y':
+    try:
+        f_to_c_converter()
+    except:
+        print("Try again. Only enter integers.")
+        f_to_c_converter()
+
+
