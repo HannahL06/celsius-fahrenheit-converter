@@ -1,2 +1,2 @@
 # celsius-fahrenheit-converter
-Converts between Celsuis and Fahrenheit tempatures.
+This program converts between Celsuis and Fahrenheit temperatures.
